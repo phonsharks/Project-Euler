@@ -34,8 +34,8 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 #include <stdlib.h>
 #include <math.h>
 
-unsigned count(int n){
-    unsigned c=0;
+int count(int n){
+    int c=0;
     while (n>1){
         n=n%2==0 ? n/2 : 3*n+1;
         c++;
@@ -45,9 +45,9 @@ unsigned count(int n){
 
 
 int main(){
-    unsigned m_i=0,m_c=0;
+    int m_i=0,m_c=0;
     for(int i=0;i<1000000;i++){
-        unsigned c=count(i);
+        int c=count(i);
         if(c>m_c){
             m_c=c;
             m_i=i;

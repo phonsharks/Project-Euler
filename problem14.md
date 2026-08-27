@@ -17,6 +17,21 @@
 >
 > NOTE: Once the chain starts the terms are allowed to go above one million.
 
+## Problem Metni (Türkçe Çeviri)
+
+> Pozitif tam sayılar kümesi için aşağıdaki yinelemeli (iteratif) dizi tanımlanır:
+>
+> n → n/2 (n çift ise)
+> n → 3n + 1 (n tek ise)
+>
+> Yukarıdaki kuralı kullanarak 13'ten başlarsak şu diziyi elde ederiz: 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1.
+>
+> Görüldüğü gibi bu dizi (13'te başlayıp 1'de biten) 10 terimden oluşur. Henüz kanıtlanmamış olsa da (Collatz Problemi), tüm başlangıç sayılarının sonunda 1'e ulaştığı düşünülmektedir.
+>
+> Bir milyonun altındaki hangi başlangıç sayısı en uzun zinciri üretir?
+>
+> NOT: Zincir bir kez başladıktan sonra terimlerin bir milyonun üzerine çıkmasına izin verilir.
+
 ## Kullanılan Algoritma
 
 Çözüm, Collatz zincirini her başlangıç değeri için doğrudan (brute-force) simüle eden basit bir yaklaşım kullanır:

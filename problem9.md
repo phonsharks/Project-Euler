@@ -12,6 +12,16 @@
 >
 > Find the product abc.
 
+## Problem Metni (Türkçe Çeviri)
+
+> Pisagor üçlüsü, a < b < c olacak şekilde a² + b² = c² eşitliğini sağlayan üç doğal sayıdan oluşan bir kümedir.
+>
+> Örneğin, 3² + 4² = 9 + 16 = 25 = 5².
+>
+> a + b + c = 1000 olacak şekilde tam olarak bir Pisagor üçlüsü vardır.
+>
+> abc çarpımını bulunuz.
+
 ## Kullanılan Algoritma
 
 Kod, olası `a` ve `b` değerlerini tek tek deneyen bir brute-force (kaba kuvvet) arama uyguluyor.

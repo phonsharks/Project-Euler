@@ -8,6 +8,12 @@
 >
 > Find the sum of all the primes below two million.
 
+## Problem Metni (Türkçe Çeviri)
+
+> 10'dan küçük asal sayıların toplamı 2 + 3 + 5 + 7 = 17'dir.
+>
+> İki milyondan küçük tüm asal sayıların toplamını bulunuz.
+
 ## Kullanılan Algoritma
 
 Kod, her sayıyı tek tek deneme bölmesi (trial division) ile asallık testinden geçiren ve asal çıkanları toplayan bir tarama algoritması kullanır (elek/sieve yöntemi değildir).

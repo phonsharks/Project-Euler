@@ -30,6 +30,14 @@ Sayının tamamı (1000 hane), kodda kullanılan haliyle aşağıdadır:
 23257530420752963450
 ```
 
+## Problem Metni (Türkçe Çeviri)
+
+> 1000 haneli sayı içindeki, çarpımı en büyük olan dört bitişik hane 9 × 9 × 8 × 9 = 5832'dir.
+>
+> 1000 haneli sayı içinde, çarpımı en büyük olan on üç bitişik haneyi bulunuz. Bu çarpımın değeri nedir?
+>
+> (1000 haneli sayının kendisi yukarıdaki İngilizce bölümde verilmiştir.)
+
 ## Kullanılan Algoritma
 
 Kod, kayan pencere (sliding window) yöntemiyle çalışan bir brute-force taramasıdır.

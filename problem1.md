@@ -8,6 +8,12 @@
 >
 > Find the sum of all the multiples of 3 or 5 below 1000.
 
+## Problem Metni (Türkçe Çeviri)
+
+> 10'dan küçük tüm doğal sayıları listelediğimizde, 3'ün veya 5'in katı olanlar 3, 5, 6 ve 9'dur. Bu katların toplamı 23'tür.
+>
+> 1000'den küçük 3'ün veya 5'in katı olan tüm sayıların toplamını bulunuz.
+
 ## Kullanılan Algoritma
 
 Çözüm, doğrudan **kaba kuvvet (brute force)** yaklaşımıyla yapılmış tek geçişli bir tarama algoritmasıdır.

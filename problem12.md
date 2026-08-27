@@ -22,6 +22,26 @@
 >
 > What is the value of the first triangle number to have over five hundred divisors?
 
+## Problem Metni (Türkçe Çeviri)
+
+> Üçgen sayılar dizisi, doğal sayılar birbirine eklenerek oluşturulur. Buna göre 7. üçgen sayı 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28 olur. İlk on terim şöyledir:
+>
+> 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
+>
+> İlk yedi üçgen sayının bölenlerini listeleyelim:
+>
+> 1: 1
+> 3: 1,3
+> 6: 1,2,3,6
+> 10: 1,2,5,10
+> 15: 1,3,5,15
+> 21: 1,3,7,21
+> 28: 1,2,4,7,14,28
+>
+> Görüldüğü gibi 28, beşten fazla bölene sahip ilk üçgen sayıdır.
+>
+> Beş yüzden fazla bölene sahip ilk üçgen sayının değeri nedir?
+
 ## Kullanılan Algoritma
 
 Kod, üçgen sayıları doğrudan asal çarpanlarına ayırmak yerine matematiksel bir kısayoldan yararlanan bir arama algoritması kullanır.

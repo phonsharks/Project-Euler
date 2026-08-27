@@ -8,6 +8,12 @@
 >
 > What is the 10,001st prime number?
 
+## Problem Metni (Türkçe Çeviri)
+
+> İlk altı asal sayıyı sıralayarak: 2, 3, 5, 7, 11 ve 13, 6. asal sayının 13 olduğunu görebiliriz.
+>
+> 10.001'inci asal sayı nedir?
+
 ## Kullanılan Algoritma
 
 Kod, deneme bölmesi (trial division) yöntemiyle çalışan bir asallık testi ve bu testi kullanan bir sayaç döngüsünden oluşuyor.

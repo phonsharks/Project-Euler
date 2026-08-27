@@ -8,6 +8,12 @@
 >
 > How many such routes are there through a 20 × 20 grid?
 
+## Problem Metni (Türkçe Çeviri)
+
+> 2 × 2'lik bir ızgaranın sol üst köşesinden başlayıp, yalnızca sağa ve aşağı hareket ederek, sağ alt köşeye ulaşmanın tam olarak 6 farklı yolu vardır.
+>
+> 20 × 20'lik bir ızgarada bu şekilde kaç yol vardır?
+
 ## Kullanılan Algoritma
 
 Bu problemin çözümü, ızgara (grid) üzerindeki yol sayma probleminin bir **kombinatorik** özdeşliğe indirgenmesine dayanır: n×n'lik bir ızgarada sol üst köşeden sağ alt köşeye, sadece sağa ve aşağı hareketlerle gidilebilecek toplam yol sayısı, toplam 2n adımdan (n sağ + n aşağı) n tanesinin "sağ" hareket olarak seçilmesiyle aynıdır (kalan n tanesi otomatik olarak "aşağı" olur). Bu da tam olarak binom katsayısı **C(2n, n)** değerine eşittir.

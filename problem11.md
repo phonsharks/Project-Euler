@@ -35,6 +35,16 @@
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 ```
 
+## Problem Metni (Türkçe Çeviri)
+
+> Aşağıdaki 20 × 20'lik tabloda, bir köşegen doğrultusundaki dört sayı kırmızı ile işaretlenmiştir.
+>
+> Bu sayıların çarpımı 26 × 63 × 78 × 14 = 1788696'dır.
+>
+> 20 × 20'lik tabloda aynı yönde (yukarı, aşağı, sol, sağ veya çapraz) bitişik dört sayının verebileceği en büyük çarpım nedir?
+>
+> (20 × 20'lik tablo yukarıdaki İngilizce bölümde verilmiştir.)
+
 ## Kullanılan Algoritma
 
 Kod, tabloyu baştan sona tarayan tam (exhaustive) bir brute-force arama uyguluyor.

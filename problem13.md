@@ -107,6 +107,10 @@
 > 20849603980134001723930671666823555245252804609722
 > 53503534226472524250874054075591789781264330331690
 
+## Problem Metni (Türkçe Çeviri)
+
+> Aşağıdaki yüz adet 50 basamaklı sayının toplamının ilk on basamağını bulun (sayılar yukarıdaki İngilizce bölümde verilmiştir).
+
 ## Kullanılan Algoritma
 
 Bu problemdeki 100 adet 50 basamaklı sayı, C'nin standart tamsayı türlerine (`int`, `long`, `long long`) hiçbir şekilde sığmaz; bu yüzden çözüm **GMP (GNU Multiple Precision Arithmetic Library)** kullanılarak keyfi hassasiyetli (arbitrary precision) aritmetikle yapılır.

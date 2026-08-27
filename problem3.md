@@ -8,6 +8,12 @@
 >
 > What is the largest prime factor of the number 600851475143?
 
+## Problem Metni (Türkçe Çeviri)
+
+> 13195 sayısının asal çarpanları 5, 7, 13 ve 29'dur.
+>
+> 600851475143 sayısının en büyük asal çarpanı nedir?
+
 ## Kullanılan Algoritma
 
 Çözüm, **deneme bölmesi (trial division)** tabanlı bir asal çarpan bulma yaklaşımı kullanır.

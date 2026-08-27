@@ -10,6 +10,14 @@
 >
 > By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
+## Problem Metni (Türkçe Çeviri)
+
+> Fibonacci dizisindeki her yeni terim, önceki iki terim toplanarak elde edilir. 1 ve 2 ile başlandığında, ilk 10 terim şöyle olur:
+>
+> 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+>
+> Değeri dört milyonu aşmayan Fibonacci dizisi terimlerini göz önünde bulundurarak, çift değerli terimlerin toplamını bulunuz.
+
 ## Kullanılan Algoritma
 
 Çözüm, Fibonacci dizisini **yinelemeli (iterative) olarak baştan üreterek** her terimi tek tek kontrol eden bir kaba kuvvet yaklaşımı kullanır; ön hesaplanmış bir dizi veya formül (Binet formülü, kapalı form vb.) kullanılmamıştır.

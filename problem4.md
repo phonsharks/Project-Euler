@@ -8,6 +8,12 @@
 >
 > Find the largest palindrome made from the product of two 3-digit numbers.
 
+## Problem Metni (Türkçe Çeviri)
+
+> Bir palindromik sayı, her iki yönden okunduğunda da aynıdır. İki 2 basamaklı sayının çarpımından elde edilen en büyük palindrom, 91 × 99 = 9009'dur.
+>
+> İki 3 basamaklı sayının çarpımından elde edilen en büyük palindromu bulunuz.
+
 ## Kullanılan Algoritma
 
 Çözüm, tüm 3 basamaklı sayı çiftlerini deneyen bir **kaba kuvvet (brute force)** arama kullanır ve her çarpımın palindrom olup olmadığını ayrı bir yardımcı fonksiyonla test eder.

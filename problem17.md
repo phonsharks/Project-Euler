@@ -10,6 +10,14 @@
 >
 > NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with British usage.
 
+## Problem Metni (Türkçe Çeviri)
+
+> 1'den 5'e kadar olan sayılar kelimelerle yazılırsa: one, two, three, four, five, toplamda 3 + 3 + 5 + 4 + 4 = 19 harf kullanılmış olur.
+>
+> 1'den 1000'e (bin dahil) kadar olan tüm sayılar kelimelerle yazılsaydı, toplam kaç harf kullanılırdı?
+>
+> NOT: Boşlukları veya tireleri saymayın. Örneğin, 342 (three hundred and forty-two) 23 harf içerir ve 115 (one hundred and fifteen) 20 harf içerir. Sayılar yazılırken "and" kullanımı İngiliz kullanımına uygundur.
+
 ## Kullanılan Algoritma
 
 `Problem17.py` çözümü, her sayıyı önce İngilizce kelime karşılığına (boşluksuz ve tiresiz olarak) çevirip ardından bu kelimenin karakter uzunluğunu ölçen bir yaklaşım izler:

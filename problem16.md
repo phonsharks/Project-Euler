@@ -8,6 +8,12 @@
 >
 > What is the sum of the digits of the number 2^1000?
 
+## Problem Metni (Türkçe Çeviri)
+
+> 2^15 = 32768'dir ve bu sayının basamaklarının toplamı 3 + 2 + 7 + 6 + 8 = 26'dır.
+>
+> 2^1000 sayısının basamaklarının toplamı kaçtır?
+
 ## Kullanılan Algoritma
 
 2^1000 sayısı yaklaşık 302 basamaklıdır ve hiçbir standart C tamsayı türüne (`int`, `long`, `long long`, hatta 64-bit türler) sığmaz. Bu nedenle `problem16.c` çözümünde de **GMP (GNU Multiple Precision Arithmetic Library)** kullanılır:

@@ -8,6 +8,12 @@
 >
 > What is the smallest positive number that is evenly divisible with no remainder by all of the numbers from 1 to 20?
 
+## Problem Metni (Türkçe Çeviri)
+
+> 2520, 1'den 10'a kadar olan sayıların her birine kalansız bölünebilen en küçük sayıdır.
+>
+> 1'den 20'ye kadar olan sayıların tamamına kalansız (tam olarak) bölünebilen en küçük pozitif sayı nedir?
+
 ## Kullanılan Algoritma
 
 Çözüm, **En Küçük Ortak Kat (EKOK/LCM)** kavramını kullanarak, 1'den 20'ye kadar olan sayıların ortak katını kümülatif biçimde hesaplar.

@@ -16,6 +16,20 @@
 >
 > Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
+## Problem Metni (Türkçe Çeviri)
+
+> İlk on doğal sayının kareleri toplamı,
+>
+> 1² + 2² + ... + 10² = 385'tir.
+>
+> İlk on doğal sayının toplamının karesi ise,
+>
+> (1 + 2 + ... + 10)² = 55² = 3025'tir.
+>
+> Dolayısıyla, ilk on doğal sayının kareleri toplamı ile toplamlarının karesi arasındaki fark 3025 - 385 = 2640'tır.
+>
+> İlk yüz doğal sayının kareleri toplamı ile toplamlarının karesi arasındaki farkı bulunuz.
+
 ## Kullanılan Algoritma
 
 Çözüm, tanım gereği doğrudan **tek geçişli kaba kuvvet** hesaplamasıdır; kapalı form formülleri (ör. `n(n+1)/2` ve `n(n+1)(2n+1)/6`) kullanılmamış, iki toplam da döngü içinde birikimli olarak hesaplanmıştır.

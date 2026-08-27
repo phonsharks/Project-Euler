@@ -28,6 +28,20 @@ Bu problemin çözümü, ızgara (grid) üzerindeki yol sayma probleminin bir **
 
 Bu yaklaşım doğrudan matematiksel formülü (binom katsayısı) kullandığı için hem çok hızlıdır (GMP'nin dahili binom hesaplama algoritması pratikte anlık sonuç verir) hem de dinamik programlama ile ızgarayı hücre hücre doldurmaya (klasik Pascal üçgeni / DP tablosu yaklaşımına) göre çok daha az kod ve bellek gerektirir; zaman karmaşıklığı, kullanılan sayıların basamak sayısına bağlı olarak GMP'nin iç algoritmasınca belirlenir ve bu boyuttaki sayılar için ihmal edilebilir düzeydedir.
 
+## Algorithm Used (English)
+
+This problem's solution rests on reducing the path-counting problem on a grid to a **combinatorial** identity: in an n×n grid, the total number of paths from the top-left corner to the bottom-right corner using only rightward and downward moves is the same as choosing, out of a total of 2n steps (n right + n down), which n of them are "right" moves (the remaining n are automatically "down"). This is exactly equal to the binomial coefficient **C(2n, n)**.
+
+The implementation in `problem15.c`:
+
+1. **Direct binomial coefficient computation:** The GMP library function `mpz_bin_uiui(result, 40, 20)` is called. This function computes the value of C(40, 20) directly and with arbitrary precision (since n=20 for a 20×20 grid, giving 2n=40). Because C(40,20) is a large number (137,846,528,820) and GMP is used, there is no risk of overflow.
+
+2. **Printing the result:** The computed `result` value is converted to a base-10 character array via `mpz_get_str(result_str, 10, result)` and printed with `printf`.
+
+3. **Memory cleanup:** The memory allocated by GMP is freed with `mpz_clear(result)`.
+
+Because this approach uses the direct mathematical formula (the binomial coefficient), it is both very fast (GMP's internal binomial-coefficient algorithm produces the result effectively instantaneously in practice) and requires far less code and memory than filling in the grid cell by cell with dynamic programming (the classic Pascal's-triangle / DP-table approach). Its time complexity is determined by GMP's internal algorithm as a function of the digit count of the numbers involved, and is negligible for numbers of this size.
+
 ## Çözüm Dosyası
 
 `problem15.c`

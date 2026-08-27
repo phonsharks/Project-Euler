@@ -131,6 +131,26 @@ Adım adım işleyiş (`problem13.c` içindeki kod üzerinden):
 
 Bu yaklaşımın doğruluğu, GMP'nin ondalık taban string ayrıştırma/toplama işlemlerinin tam (exact) olması ve hiçbir ara adımda taşma riski taşımamasından gelir. Zaman karmaşıklığı O(100 × basamak sayısı) düzeyindedir, yani pratikte anlık sayılabilecek kadar hızlıdır; alan karmaşıklığı da sabit sayıda büyük tamsayı değişkeniyle sınırlıdır (50-52 basamaklık birkaç `mpz_t` nesnesi).
 
+## Algorithm Used (English)
+
+The 100 fifty-digit numbers in this problem cannot fit into any of C's standard integer types (`int`, `long`, `long long`) in any way; therefore the solution is implemented using arbitrary-precision arithmetic via the **GMP (GNU Multiple Precision Arithmetic Library)**.
+
+Step-by-step operation (based on the code in `problem13.c`):
+
+1. **Data storage:** All 100 numbers are stored as text (strings) in an array shaped `char number[100][51]`. Each row is allocated 51 bytes: 50 digits plus a terminating character.
+
+2. **Preparing the GMP variables:** Inside the `run()` function, two `mpz_t` (GMP big-integer) variables are declared: `sum` (to hold the running total) and `num` (the temporary number used within the loop). They are initialized with `mpz_init`, and their starting values are set to 0 with `mpz_set_ui`.
+
+3. **Summation loop:** In the `for(int i=0;i<100;i++)` loop, each string is parsed in base 10 via `mpz_set_str(num, number[i], 10)` and loaded into the `num` variable, then added to `sum` via `mpz_add(sum, sum, num)`. Because GMP's `mpz_add` function can add numbers of arbitrary size without overflow, the sum of 100 fifty-digit numbers (the result being at most 52 digits) is computed without any issue.
+
+4. **Converting and truncating the result to a string:** Once the summation is complete, `mpz_get_str(sum_str, 10, sum)` converts the value of `sum` into a base-10 character array (`sum_str`, a 60-byte buffer). As noted in the code's own comment, this buffer is deliberately made large because using a smaller array could lead to a buffer overflow error.
+
+5. **Printing the first 10 digits:** The loop `for(int i=0;i<10;i++) printf("%c", sum_str[i]);` prints only the first 10 characters of the resulting sum to the screen — i.e., the requested "first ten digits."
+
+6. **Memory cleanup:** The memory allocated by GMP is freed with calls to `mpz_clear(num)` and `mpz_clear(sum)`.
+
+The correctness of this approach comes from the fact that GMP's decimal-base string parsing/addition operations are exact, and no intermediate step carries any risk of overflow. The time complexity is on the order of O(100 × number of digits), meaning it is effectively instantaneous in practice; the space complexity is likewise bounded by a fixed number of big-integer variables (a couple of `mpz_t` objects with roughly 50-52 digits).
+
 ## Çözüm Dosyası
 
 `problem13.c`

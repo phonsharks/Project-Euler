@@ -37,6 +37,25 @@
 
 Bu yaklaşımın doğruluğu, İngilizce sayı adlandırma kurallarının (yüzler + "and" + onlar/birler, özel "teens" isimleri) doğrudan koda yansıtılmasından ve boşluk/tire eklenmeden string birleştirme yapılmasından gelir. Zaman karmaşıklığı O(1000) sayı üzerinde sabit işlemler içerdiğinden pratikte anlık sonuç verir.
 
+## Algorithm Used (English)
+
+The `Problem17.py` solution follows an approach that first converts each number into its English word form (with no spaces or hyphens) and then measures the character length of that word:
+
+1. **Fixed word lists:** The arrays `ones` (the words for numbers 1-9, with index 0 left blank), `teens` (the special names for 10-19: ten, eleven, ..., nineteen), and `tens` (the tens-place words for 20, 30, ..., 90) are defined.
+
+2. **`number_to_words(n)` function:** Converts a number into words:
+   - In the special case `n == 0`, it returns `'zero'` (not actually used in the main summation loop, included only as a safeguard).
+   - In the special case `n == 1000`, it directly returns `'onethousand'` (hardcoded as a special case since the problem only needs to include 1000 itself).
+   - **Hundreds digit:** `hundreds = n // 100` is computed; if greater than zero, `ones[hundreds] + 'hundred'` is appended. If the number has a nonzero remainder when divided by 100 (`n % 100 != 0`), the conjunction `'and'` is appended in keeping with British usage (e.g. "threehundredand...").
+   - **Tens and units digits:** `remainder = n % 100` is computed. If the remainder is 0, nothing is appended; if it is less than 10, `ones[remainder]` is used; if it is less than 20 (i.e., 10-19), `teens[remainder-10]` is used; otherwise `tens[remainder//10]` is appended, along with the units digit (`remainder % 10`) from the `ones[]` list if present.
+   - All parts are concatenated together into a single word via string concatenation (`+=`), with no spaces or hyphens.
+
+3. **`count_letters(n)` function:** Returns the `len()` of the result of `number_to_words(n)`. Since the words are already produced without spaces or hyphens, this length directly represents the "letter count"; the problem's requirement to not count spaces or hyphens is automatically satisfied because these characters are never added in the first place during word generation.
+
+4. **Summation loop:** `for i in range(1, 1001): total_letters += count_letters(i)` accumulates the letter count of every number from 1 to 1000 (inclusive) into the `total_letters` variable, and the result is printed to the screen.
+
+The correctness of this approach comes from directly encoding the rules of English number naming (hundreds + "and" + tens/units, the special "teens" names) into the code, and from concatenating strings without ever adding spaces or hyphens. Since the time complexity involves constant-time operations over 1000 numbers, i.e. O(1000), it produces a result effectively instantaneously in practice.
+
 ## Çözüm Dosyası
 
 `Problem17.py`

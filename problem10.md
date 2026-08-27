@@ -24,6 +24,16 @@ Kod, her sayıyı tek tek deneme bölmesi (trial division) ile asallık testinde
 
 Yaklaşımın özeti: her aday sayı için bağımsız olarak `O(sqrt(n))` karmaşıklığında bir asallık testi çalıştırılıp sonuçların toplandığı doğrusal bir tarama olduğundan, toplam karmaşıklık yaklaşık `O(n * sqrt(n))` mertebesindedir (n = 2.000.000). Bu, Eratosthenes eleği gibi önceden asal işaretleyen bir yapı kullanmadan, her sayıyı ayrı ayrı test eden daha basit fakat daha yavaş bir yöntemdir.
 
+## Algorithm Used (English)
+
+The code uses a scanning algorithm that runs each number through a primality test based on trial division and sums up the ones that turn out to be prime (it is not a sieve method).
+
+- The function `prime(int numb)` tests whether a number is prime: the special case `numb == 2` is accepted as prime; even numbers are immediately rejected; for the remaining odd numbers, divisibility is tested in odd steps (`i = i + 2`) from `i = 3` up to `sqrt(numb)`. If a divisor is found, the number is not prime (`0`); if none is found, it is prime (`1`).
+- In `main()`, every number from `i = 2` up to `2000000` (two million) is tested with `prime(i)`; every number that turns out to be prime is added to the `sum` variable (`sum += i`).
+- Once the loop completes, `sum` is printed as the sum of all prime numbers below two million.
+
+Summary of the approach: since an independent primality test of `O(sqrt(n))` complexity is run for each candidate number and the results are summed in a linear scan, the overall complexity is on the order of approximately `O(n * sqrt(n))` (n = 2,000,000). This is a simpler but slower method that tests each number individually, without using a structure that pre-marks primes such as the Sieve of Eratosthenes.
+
 ## Çözüm Dosyası
 
 `problem10.c`

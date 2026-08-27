@@ -52,6 +52,16 @@ Kod, üçgen sayıları doğrudan asal çarpanlarına ayırmak yerine matematiks
 
 Yaklaşımın özeti: brute-force artan `n` taraması ile, her adımda üçgen sayının bölen sayısını coprime çarpanlara bölerek hızlı hesaplayan bir asal çarpanlara ayırma (prime factorization) tabanlı algoritmadır.
 
+## Algorithm Used (English)
+
+The code uses a search algorithm that takes advantage of a mathematical shortcut instead of directly factorizing the triangular numbers themselves.
+
+- The function `countDivisors(long long n)` computes the number of divisors of `n` by factorizing it into primes (via trial division, from `p = 2` while `p * p <= n`): for each prime factor `p`, its exponent (`exponent`) is counted, and the divisor-count is accumulated multiplicatively via the formula `count *= (exponent + 1)` (if a number is factored as `p1^e1 * p2^e2 * ...`, the total number of divisors is `(e1+1)*(e2+1)*...`). Once the loop ends, if a prime factor greater than `1` remains in `n` (i.e., `n` has a single prime factor larger than `sqrt(n)`), this is also accounted for via `count *= 2`.
+- In `main()`, triangular numbers are generated using the closed-form formula `triangle = n(n+1)/2` instead of successive addition. The key optimization here is as follows: since `n` and `n+1` are two consecutive integers, they share no common divisor (they are coprime); therefore, the number of divisors of `n(n+1)/2` can also be found by factorizing `n` and `n+1` separately (with one of them divided by 2) and multiplying their divisor counts (the divisor-count function is multiplicative). In the code, `a = n` and `b = n + 1` are taken; whichever of the two is even is divided by `2` (if `a % 2 == 0`, then `a/2`, otherwise `b/2`), splitting them into two coprime parts, and the total divisor count is found either as `divisors = countDivisors(a/2) * countDivisors(b)` or as `divisors = countDivisors(a) * countDivisors(b/2)`, by multiplying the divisor counts of two separate (and smaller) numbers. This is much faster than directly factorizing the ever-growing `triangle` value itself.
+- Starting from `n = 1`, `n` is incremented by one (`n++`) at each step until the `divisors` value computed this way exceeds `500`; as soon as the condition `divisors > 500` is satisfied, the `triangle` value at that step (i.e., `n(n+1)/2`) is printed as the first triangular number with more than 500 divisors.
+
+Summary of the approach: this is a prime-factorization-based algorithm that performs a brute-force scan over increasing `n`, at each step quickly computing the triangular number's divisor count by splitting it into coprime factors.
+
 ## Çözüm Dosyası
 
 `problem12.c`

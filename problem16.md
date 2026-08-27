@@ -28,6 +28,20 @@
 
 Bu yaklaşımda büyük sayının kendisi GMP ile kesin (exact) olarak hesaplandığı için basamaklara ayrıştırma ve toplama adımı, standart string/karakter işleme mantığıyla (ASCII rakam karakterinden `'0'` çıkarma) yürütülür. Zaman karmaşıklığı O(basamak sayısı) = O(302) düzeyindedir, yani ihmal edilebilir derecede hızlıdır.
 
+## Algorithm Used (English)
+
+The number 2^1000 has approximately 302 digits and does not fit into any standard C integer type (`int`, `long`, `long long`, or even 64-bit types). For this reason, the `problem16.c` solution also uses the **GMP (GNU Multiple Precision Arithmetic Library)**:
+
+1. **Computing the large power:** `mpz_ui_pow_ui(result, 2, 1000)` computes 2 raised to the 1000th power with arbitrary precision and without overflow, writing the result into the `mpz_t` variable named `result`.
+
+2. **Converting to a decimal string:** `mpz_get_str(result_str, 10, result)` converts the value of `result` into a base-10 character array (`result_str`). In this array, each character is the ASCII digit corresponding to one digit of the number (e.g. '3', '2', '7', ...).
+
+3. **Summing the digits:** The loop `for(int i=0; i<result_str[i]; i++) { sum += result_str[i] - '0'; }` adds the numeric value of each character (converted from an ASCII digit to an integer via `character - '0'`) into the `sum` variable. As explained in the code's own comment, the loop condition used is `i < result_str[i]`; this relies on the idea that once the string's terminating null character (ASCII value 0) is reached, the condition `i < 0` no longer holds and the loop stops naturally (the author's in-code comment states that "one can proceed knowing it will stop at null, i.e., zero, according to the ASCII table").
+
+4. **Printing the result and memory cleanup:** The total `sum` is printed with `printf("%d\n", sum)`; the GMP memory is freed with `mpz_clear(result)`.
+
+Because the large number itself is computed exactly via GMP in this approach, the digit-extraction and summation step is carried out using ordinary string/character-processing logic (subtracting `'0'` from an ASCII digit character). The time complexity is O(number of digits) = O(302), meaning it runs at a negligibly fast speed.
+
 ## Çözüm Dosyası
 
 `problem16.c`

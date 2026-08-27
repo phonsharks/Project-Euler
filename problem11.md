@@ -59,6 +59,20 @@ Kod, tabloyu baştan sona tarayan tam (exhaustive) bir brute-force arama uyguluy
 
 Tablo boyutu sabit (`20x20`) ve yön sayısı sabit (`4`) olduğundan, karmaşıklık `O(SIZE² * 4 * 4)` gibi sabit ve küçük bir sayıdır; bu da tam taramanın pratikte anında sonuç vermesini sağlar.
 
+## Algorithm Used (English)
+
+The code performs an exhaustive brute-force search that scans the entire grid from start to end.
+
+- The array `grid[SIZE][SIZE]` (`SIZE = 20`) holds the entire table given in the problem as constant values.
+- The array `directions[4][2]` defines four direction vectors: right `(0, 1)`, down `(1, 0)`, diagonal down-right `(1, 1)`, and diagonal down-left `(1, -1)`. The up and left directions are not separately defined, because since the loop scans starting from every cell of the grid, a group of four sought "to the right" from one cell, for example, is already scanned from another starting point — namely from the left cell in the `+1` direction, rather than from the right cell in the `-1` direction — for that same group. In other words, scanning all cells also covers the four directions symmetric to these four (left, up, diagonal up-left, and diagonal up-right).
+- Three nested loops: `row` and `col` select each starting cell in the grid, while `d` selects one of the four directions. `dr, dc` give the row/column increments for that direction.
+- The end cell (`endRow`, `endCol`) reached after moving 4 cells in the chosen direction is computed in advance; if this cell falls outside the grid boundaries (`endRow`/`endCol` less than `0` or greater than/equal to `SIZE`), that direction/starting-point combination is skipped (`continue`).
+- If it is within bounds, the loop `k = 0..3` computes the product (`product`) of the cells `grid[row + k*dr][col + k*dc]`.
+- If the resulting `product` exceeds the largest value found so far (`best`), `best` is updated.
+- After all starting points and directions have been tried, `best` is printed as the greatest product obtainable from 4 adjacent numbers in any direction (horizontal, vertical, or either diagonal) in the grid.
+
+Since the grid size is fixed (`20x20`) and the number of directions is fixed (`4`), the complexity is a fixed and small quantity like `O(SIZE² * 4 * 4)`, which allows this exhaustive scan to give an answer essentially instantly in practice.
+
 ## Çözüm Dosyası
 
 `problem11.c`

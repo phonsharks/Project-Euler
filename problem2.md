@@ -30,6 +30,18 @@
 
 Bu yaklaşım, dizinin her bir terimini (çift olsun olmasın) tek tek üretip test ettiği için basit ama etkilidir: Fibonacci dizisi üstel büyüdüğünden dört milyon sınırına kadar yalnızca birkaç düzine terim üretilir (döngü çok az sayıda adımda sona erer), bu yüzden pratikte O(log(limit)) mertebesinde çok hızlı çalışır. Ek bellek kullanımı O(1)'dir (yalnızca birkaç tam sayı değişkeni tutulur).
 
+## Algorithm Used (English)
+
+The solution uses a **brute-force approach that generates the Fibonacci sequence iteratively from the start**, checking each term one by one; no precomputed array or closed-form formula (Binet's formula or similar) is used.
+
+- `num1` and `num2` are initialized to 1 and 2, the first two terms of the sequence, respectively, and `sum` is set to 0.
+- The loop `while(num2<=4000000)` continues as long as the current term (`num2`) does not exceed four million.
+- At each step, `if(num2%2==0)` checks whether the term is even; if it is, it is added to the accumulator via `sum += num2;`.
+- At the end of each iteration, the next Fibonacci term is computed with `tmp = num1 + num2;`, and then the window is shifted one step forward with the assignments `num1 = num2; num2 = tmp;` (the classic two-variable Fibonacci advancement technique).
+- Once the loop ends, the accumulated `sum` value is printed.
+
+This approach is simple but effective, since it generates and tests every term of the sequence (whether even or not) individually: because the Fibonacci sequence grows exponentially, only a few dozen terms are generated up to the four-million limit (the loop terminates after very few iterations), so in practice it runs extremely fast, on the order of O(log(limit)). Auxiliary memory usage is O(1) (only a handful of integer variables are kept).
+
 ## Çözüm Dosyası
 
 `problem2.c`

@@ -27,6 +27,19 @@ Bu, ek bir veri yapısı veya matematiksel formül kullanmadan, aday sayı uzay�
 
 Dikkat edilmesi gereken iki nokta: döngü sınırı `i<=1000` olduğundan 1000 dahil taranmaktadır (problem metni "1000'in altında" dediği için sınırın 999'da kalması beklenir, ancak 1000 ne 3'e ne de 5'e tam bölündüğü için sonucu etkilemez); ayrıca `sum` değişkeni döngüden önce açıkça 0'a ilklendirilmemiştir.
 
+## Algorithm Used (English)
+
+The solution is a single-pass scanning algorithm implemented as a straightforward **brute force** approach.
+
+- The loop `for(int i=3;i<=1000;i++)` in `main` starts at 3 and walks through every integer up to and including 1000, one at a time.
+- For each value of `i`, the condition `if((i%3==0) || (i%5==0))` checks whether the number is evenly divisible by 3 or by 5 (using the modulo operator).
+- Every number that satisfies the condition is accumulated into the `sum` variable via `sum += i;`.
+- After the loop finishes, the value of `sum` is printed.
+
+This is a linear algorithm that scans the entire candidate range (from 3 to 1000) and sums the numbers that satisfy the condition, without using any additional data structure or mathematical formula. Its time complexity is O(n) (n = 1000), and its auxiliary space usage is O(1).
+
+Two points worth noting: since the loop bound is `i<=1000`, the value 1000 itself is included in the scan (the problem statement says "below 1000," so the bound would be expected to stop at 999, but since 1000 is divisible by neither 3 nor 5, this does not affect the result); also, the `sum` variable is not explicitly initialized to 0 before the loop.
+
 ## Çözüm Dosyası
 
 `Problem1.c`

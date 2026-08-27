@@ -50,6 +50,18 @@ Kod, kayan pencere (sliding window) yöntemiyle çalışan bir brute-force taram
 
 Karmaşıklık `O(n * window)` (n ≈ 1000, window = 13) olduğundan, doğrudan her pencereyi tek tek kontrol eden bu basit tarama pratikte çok hızlı çalışır.
 
+## Algorithm Used (English)
+
+The code is a brute-force scan using the sliding window technique.
+
+- The 1000-digit number is stored as a constant character array (string) named `digits`. The variable `len` holds the length of the array via `strlen(digits)`, and the window width is fixed at `window = 13`.
+- The outer loop advances from `i = 0` as long as the condition `i + window <= len` holds; that is, the starting position of every possible 13-digit consecutive window within the number is tried one by one.
+- The inner loop (`j = 0..window-1`) computes the product (`product`) of the 13 digits in that window. If a digit is `0` (`d == 0`), the flag `has_zero` is set to `1` and the loop is immediately terminated with `break`, because if the product contains a `0`, the result will certainly be `0`, so that window cannot be a candidate for the largest product — this is an early-exit optimization that avoids unnecessary multiplications.
+- If the window contains no `0` (`has_zero == 0`) and the computed `product` is greater than the largest value found so far (`best`), `best` is updated.
+- After all windows have been scanned, the variable `best` is printed as the greatest product obtainable from 13 adjacent digits.
+
+Since the complexity is `O(n * window)` (n ≈ 1000, window = 13), this simple scan that directly checks each window one by one runs very fast in practice.
+
 ## Çözüm Dosyası
 
 `problem8.c`

@@ -41,6 +41,17 @@
 
 Döngü içinde ayrıca `printf("%i\n",sum1);` satırı bulunur; bu, `sum1` değerinin her adımda (o adımdaki `i*i` eklenmeden önceki hâliyle) konsola yazdırılması amaçlı bir ek çıktıdır ve nihai sonucu (`sum2-sum1`) etkilemez. Zaman karmaşıklığı O(n)'dir (n = 100), ek bellek kullanımı O(1)'dir.
 
+## Algorithm Used (English)
+
+The solution is, by definition, a direct single-pass **brute-force** calculation; no closed-form formulas (e.g., `n(n+1)/2` and `n(n+1)(2n+1)/6`) are used, and both sums are accumulated cumulatively inside the loop.
+
+- `sum1` (the sum of squares) and `sum2` (the sum of the numbers) are initialized to 0.
+- The loop `for(int i=1;i<=100;i++)` walks through every number from 1 to 100; at each step, `sum1 += i*i;` adds that number's square to the sum-of-squares accumulator, and `sum2 += i;` adds the number itself to the sum accumulator.
+- After the loop ends, the line `sum2 *= sum2;` computes the square of the sum (i.e., `(1+2+...+100)²`).
+- Finally, `sum2 - sum1` (the square of the sum minus the sum of squares) is printed; this is the difference the problem asks for.
+
+There is also a line `printf("%i\n",sum1);` inside the loop; this is extra output intended to print the value of `sum1` at each step (in its state before that step's `i*i` is added), and it does not affect the final result (`sum2-sum1`). Time complexity is O(n) (n = 100), and auxiliary space usage is O(1).
+
 ## Çözüm Dosyası
 
 `problem6.c`

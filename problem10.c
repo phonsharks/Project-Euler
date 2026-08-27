@@ -1,7 +1,13 @@
 /*
-10'un altındaki asal sayıların toplamı 2 + 3 + 5 + 7 = 17'dir. 
-İki milyonun altındaki tüm asal sayıların toplamını bulun
-*/
+ * Project Euler Problem 10: Summation of Primes
+ * Kaynak: https://projecteuler.net/problem=10
+ *
+ * Algoritma:
+ * prime() fonksiyonu deneme bölmesi (trial division) ile asallık testi yapar
+ * (elek/sieve kullanılmaz). main() içinde 2'den 2.000.000'e kadar her sayı
+ * tek tek test edilir, asal çıkanlar sum değişkenine eklenir; sonunda toplam
+ * yazdırılır.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

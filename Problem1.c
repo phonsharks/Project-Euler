@@ -1,7 +1,12 @@
 /*
-10'un altında 3 veya 5'in katı olan tüm doğal sayıları listelersek 3, 5, 6 ve 9 elde ederiz. Bu katların toplamı 23'tür.
-
-1000'in altındaki 3 veya 5'in tüm katlarının toplamını bulun.*/
+ * Project Euler Problem 1: Multiples of 3 or 5
+ * Kaynak: https://projecteuler.net/problem=1
+ *
+ * Algoritma:
+ * 3'ten 1000'e kadar (kaba kuvvet) her sayı tek tek dolaşılır.
+ * Sayı 3'e veya 5'e tam bölünüyorsa (i%3==0 || i%5==0) sum'a eklenir.
+ * Döngü bitince biriken toplam yazdırılır.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,7 +1,13 @@
 /*
-2520, 1'den 10'a kadar olan sayıların her birine kalansız bölünebilen en küçük sayıdır. 
-1'den 20'ye kadar olan sayıların tamamına tam bölünebilen en küçük pozitif sayı kaçtır?
-*/
+ * Project Euler Problem 5: Smallest Multiple
+ * Kaynak: https://projecteuler.net/problem=5
+ *
+ * Algoritma:
+ * gcd() iki sayının en büyük ortak bölenini doğrusal taramayla bulur;
+ * lcm() = (num1*num2)/gcd(num1,num2) formülünü uygular. main içinde
+ * value=1'den başlayarak 2..19 arası her sayı için value=lcm(value,i)
+ * ile kümülatif en küçük ortak kat (EKOK) hesaplanır.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

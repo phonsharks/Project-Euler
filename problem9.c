@@ -1,8 +1,13 @@
 /*
-Bir Pisagor üçlüsü, a < b < c olmak üzere üç doğal sayı kümesidir. a^2 + b^2 = c^2
-Örneğin, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
-a + b + c = 1000 olan tam olarak bir Pisagor üçlüsü vardır. abc durumunu bulun.
-*/
+ * Project Euler Problem 9: Special Pythagorean Triplet
+ * Kaynak: https://projecteuler.net/problem=9
+ *
+ * Algoritma:
+ * calc(a,b) fonksiyonu sqrt(a^2+b^2) ile c'yi hesaplar. main() içinde iç içe
+ * iki döngüyle olası tüm (a,b) çiftleri (brute-force) denenir; her çift için
+ * c hesaplanıp a+b+c==1000 şartı kontrol edilir, şart sağlanınca a*b*c
+ * çarpımı yazdırılır.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,7 +1,14 @@
 /*
-İlk altı asal sayıyı listeleyerek: 2, 3, 5, 7, 11 ve 13, 6. asal sayının 13 olduğunu görebiliriz. 
-10001. asal sayı kaçtır?
-*/
+ * Project Euler Problem 7: 10 001st Prime
+ * Kaynak: https://projecteuler.net/problem=7
+ *
+ * Algoritma:
+ * prime() fonksiyonu deneme bölmesi (trial division) ile asallık testi yapar:
+ * çift sayılar hemen elenir, tek sayılar için sqrt(num)'a kadar yalnızca tek
+ * bölenler denenir. main() içinde artan i değerleri tek tek test edilir,
+ * asal bulundukça sayaç artırılır ve son bulunan asal (primelast) saklanır;
+ * amaç 10001. asal sayıyı bulup yazdırmaktır.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

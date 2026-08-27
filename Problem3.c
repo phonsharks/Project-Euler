@@ -1,8 +1,13 @@
 /*
-13195'in asal çarpanları 5, 7, 13 ve 29'dur.
-
-600851475143 sayısının en büyük asal çarpanı kaçtır?
-*/
+ * Project Euler Problem 3: Largest Prime Factor
+ * Kaynak: https://projecteuler.net/problem=3
+ *
+ * Algoritma:
+ * get_prime, 3'ten sqrt(numb)'a kadar tek sayılarla deneme bölmesi
+ * yaparak numb'ın en küçük asal çarpanını bulur (bölen yoksa numb
+ * asaldır ve kendisi döner). main içindeki döngü bulunan asal
+ * çarpanla numb'ı günceller ve tekrar get_prime çağırır.
+ */
 
 #include <stdio.h>
 #include <math.h>

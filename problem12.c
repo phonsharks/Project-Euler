@@ -1,8 +1,15 @@
 #include <stdio.h>
 
-/* Project Euler Problem 12: Highly Divisible Triangular Number
- * What is the value of the first triangle number to have over five
- * hundred divisors?
+/*
+ * Project Euler Problem 12: Highly Divisible Triangular Number
+ * Kaynak: https://projecteuler.net/problem=12
+ *
+ * Algoritma:
+ * countDivisors() asal çarpanlara ayırma (trial division) ile bölen sayısını
+ * hesaplar. main() içinde üçgen sayılar n(n+1)/2 formülüyle üretilir; n ve
+ * n+1 ardışık (coprime) olduğundan biri 2'ye bölünüp iki coprime parçanın
+ * bölen sayıları ayrı hesaplanıp çarpılır (çarpımsallık özelliği). n arttıkça
+ * bölen sayısı 500'ü geçtiği ilk üçgen sayı bulunup yazdırılır.
  */
 
 long long countDivisors(long long n) {

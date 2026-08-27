@@ -1,11 +1,13 @@
 /*
-İlk on doğal sayının karelerinin toplamı,
-1^2 + 2^2 + ... + 10^2 = 385
-İlk on doğal sayının toplamının karesi,
-(1 + 2 + ... + 10)^2 = 55^2 = 3025
-Dolayısıyla ilk on doğal sayının kareleri toplamı ile toplamın karesi arasındaki fark 3025 - 385 = 2640'tır.
-İlk yüz doğal sayının kareleri toplamı ile toplamın karesi arasındaki farkı bulun.
-*/
+ * Project Euler Problem 6: Sum Square Difference
+ * Kaynak: https://projecteuler.net/problem=6
+ *
+ * Algoritma:
+ * 1'den 100'e kadar döngüyle hem kareler toplamı (sum1 += i*i) hem
+ * de sayıların toplamı (sum2 += i) biriktirilir. Döngü sonunda
+ * sum2 karesi alınır ve sum2 - sum1 (toplamın karesi ile kareler
+ * toplamı arasındaki fark) yazdırılır.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

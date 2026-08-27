@@ -1,8 +1,13 @@
 /*
-Palindromik bir sayı her iki şekilde de aynı şekilde okunur. 
-İki basamaklı iki sayının çarpımından yapılan en büyük palindrom 9009 = 91 × 99'dur.
-3 basamaklı iki sayının çarpımından oluşan en büyük palindromu bulun.
-*/
+ * Project Euler Problem 4: Largest Palindrome Product
+ * Kaynak: https://projecteuler.net/problem=4
+ *
+ * Algoritma:
+ * 999'dan 100'e kadar tüm 3 basamaklı sayı çiftleri (number1, number2)
+ * kaba kuvvetle denenir. Her çarpım polindrom() ile test edilir;
+ * palindrom olan ve o ana kadarki en büyükten büyük olan çarpım
+ * largest değişkeninde tutulur ve sonunda yazdırılır.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

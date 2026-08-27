@@ -1,32 +1,15 @@
 /*
-Aşağıdaki yinelemeli dizi pozitif tamsayılar kümesi için tanımlanmıştır:
+Project Euler Problem 14: Longest Collatz Sequence
+Kaynak: https://projecteuler.net/problem=14
 
-n → n/2 (n çifttir)
-n → 3n + 1 (n tektir)
-
-Yukarıdaki kuralı kullanarak ve 13 ile başlayarak aşağıdaki diziyi oluştururuz:
-
-13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
-Bu dizinin (13'ten başlayıp 1'de biten) 10 terim içerdiği görülebilir. Henüz kanıtlanmamış olmasına rağmen (Collatz Problemi), tüm başlangıç sayılarının 1'de bittiği düşünülmektedir.
-
-Bir milyonun altındaki hangi başlangıç sayısı en uzun zinciri oluşturur?
-
-NOT: Zincir başladıktan sonra terimlerin bir milyonun üzerine çıkmasına izin verilir.
-
-                                    //English
-                                    
-The following iterative sequence is defined for the set of positive integers:
-
-n → n/2 (n is even)
-n → 3n + 1 (n is odd)
-
-Using the rule above and starting with 13, we generate the following sequence:
-
-13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
-It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), 
-it is thought that all starting numbers finish at 1.Which starting number, under one million, produces the longest chain?
-
-NOTE: Once the chain starts the terms are allowed to go above one million.
+Algoritma:
+count() fonksiyonu, verilen n için Collatz zincirini doğrudan simüle eder:
+n çiftse n/2, tekse 3n+1 uygulanır ve n değeri 1'e ulaşana kadar adımlar
+sayılır (memoizasyon yapılmaz, her başlangıç değeri için zincir sıfırdan
+hesaplanır). main() içinde 0'dan 999999'a kadar her i için count(i)
+hesaplanır; en uzun zinciri veren başlangıç sayısı (m_i) ve o zincirin
+uzunluğu (m_c) takip edilerek sonunda en uzun zinciri üreten başlangıç
+sayısı yazdırılır.
 */
 
 

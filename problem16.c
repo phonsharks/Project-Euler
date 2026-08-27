@@ -1,9 +1,16 @@
+/*
+Project Euler Problem 16: Power Digit Sum
+Kaynak: https://projecteuler.net/problem=16
 
-/*2×2'lik bir ızgaranın sol üst köşesinden başlayarak ve sadece sağa ve aşağı doğru hareket edebilerek, sağ alt köşeye giden tam 6 rota vardır.
-20×20'lik bir ızgara boyunca böyle kaç rota vardır?
-                                    //English
-Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
-How many such routes are there through a 20×20 grid?
+Algoritma:
+2^1000 sayısı normal tamsayı türlerine sığmayacak kadar büyük (~302 basamak)
+olduğundan, GMP kütüphanesinin mpz_ui_pow_ui(result,2,1000) fonksiyonu ile
+keyfi hassasiyetli (arbitrary precision) olarak hesaplanır. Sonuç
+mpz_get_str ile ondalık bir karakter dizesine (result_str) dönüştürülür.
+Ardından bu dize üzerinde gezilerek her karakterin rakam değeri
+(result_str[i] - '0') toplanır; döngü, dizenin sonundaki null sonlandırıcı
+karaktere (ASCII değeri 0) ulaşıldığında i < result_str[i] koşulunun
+sağlanamamasıyla durur (bu davranış kod içindeki yorumda da açıklanmıştır).
 */
 
 

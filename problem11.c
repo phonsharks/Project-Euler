@@ -1,8 +1,16 @@
 #include <stdio.h>
 
-/* Project Euler Problem 11: Largest Product in a Grid
- * In the 20x20 grid below, what is the greatest product of four adjacent
- * numbers in the same direction (up, down, left, right, or diagonally)?
+/*
+ * Project Euler Problem 11: Largest Product in a Grid
+ * Kaynak: https://projecteuler.net/problem=11
+ *
+ * Algoritma:
+ * 20x20 tablo grid dizisinde sabit değerler olarak tutulur. directions
+ * dizisiyle 4 yön (sağ, aşağı, çapraz aşağı-sağ, çapraz aşağı-sol) tanımlanır;
+ * tablonun her hücresi başlangıç noktası kabul edilip her yönde 4 bitişik
+ * hücrenin çarpımı hesaplanır (sınır dışına taşan denemeler atlanır). Tüm
+ * hücreler tüm hücrelerden tarandığı için diğer 4 yön (sol, yukarı, vb.)
+ * dolaylı olarak da kapsanmış olur. En büyük çarpım (best) bulunup yazdırılır.
  */
 
 #define SIZE 20

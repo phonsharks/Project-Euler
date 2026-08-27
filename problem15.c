@@ -1,10 +1,16 @@
 
 /*
-2×2'lik bir ızgaranın sol üst köşesinden başlayarak ve sadece sağa ve aşağı doğru hareket edebilerek, sağ alt köşeye giden tam 6 rota vardır.
-20×20'lik bir ızgara boyunca böyle kaç rota vardır?
-                                    //English
-Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
-How many such routes are there through a 20×20 grid?
+Project Euler Problem 15: Lattice Paths
+Kaynak: https://projecteuler.net/problem=15
+
+Algoritma:
+n×n'lik bir ızgarada sol üstten sağ alta sadece sağa ve aşağı hareketle
+gidilen yol sayısı, toplam 2n hareket içinden n tanesinin "sağ" (kalanı
+"aşağı") olarak seçilmesi ile aynıdır; yani C(2n, n) kombinasyonuna eşittir.
+20×20'lik ızgara için bu değer C(40,20)'dir. Kod, GMP kütüphanesinin
+mpz_bin_uiui(result,40,20) fonksiyonu ile bu binom katsayısını doğrudan
+(taşma riski olmadan, keyfi hassasiyetle) hesaplar ve mpz_get_str ile
+ondalık dizeye çevirip yazdırır.
 */
 
 

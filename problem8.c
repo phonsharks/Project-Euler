@@ -1,9 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
-/* Project Euler Problem 8: Largest Product in a Series
- * Find the thirteen adjacent digits in the 1000-digit number that have
- * the greatest product. What is the value of this product?
+/*
+ * Project Euler Problem 8: Largest Product in a Series
+ * Kaynak: https://projecteuler.net/problem=8
+ *
+ * Algoritma:
+ * 1000 haneli sayı digits dizisinde string olarak tutulur. Kayan pencere
+ * (sliding window) yaklaşımıyla her 13 haneli ardışık pencere için çarpım
+ * hesaplanır; pencerede bir hane 0 ise erken çıkışla (has_zero) gereksiz
+ * hesap atlanır. Tüm pencereler arasındaki en büyük çarpım (best) bulunup
+ * yazdırılır.
  */
 
 const char *digits =
